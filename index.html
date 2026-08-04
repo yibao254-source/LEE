@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>刘畅生日快乐</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;width:100vw;height:100vh;overflow:hidden;
+ display:flex;align-items:center;justify-content:center;
+ background:linear-gradient(135deg,#ffd7ea,#fff2ad,#bcecff,#e2cfff);
+ font-family:"Microsoft YaHei",sans-serif;
+}
+.card{text-align:center;z-index:5}
+.title{
+ font-size:54px;line-height:1.25;color:#ff5790;
+ text-shadow:0 4px white,0 8px 15px #ff9dbb;
+ animation:pulse 1.2s infinite alternate;
+}
+.cake{
+ font-size:75px;
+ animation:flash 1s infinite;
+}
+.gift{
+ font-size:80px;
+ cursor:pointer;
+ animation:shake 1.8s infinite;
+}
+.tip{font-size:20px;color:#ff8a5b}
+.balloon{
+ position:absolute;
+ bottom:-120px;
+ font-size:55px;
+ animation:rise linear infinite;
+}
+.b1{left:10%;animation-duration:8s}
+.b2{left:35%;animation-duration:10s;animation-delay:2s}
+.b3{right:20%;animation-duration:9s;animation-delay:1s}
+.b4{right:5%;animation-duration:11s;animation-delay:3s}
+.star{
+ position:absolute;font-size:30px;
+ animation:twinkle 1.5s infinite;
+}
+@keyframes pulse{
+ from{transform:scale(.9)}to{transform:scale(1.15)}
+}
+@keyframes flash{
+ 50%{filter:drop-shadow(0 0 20px #fff36b);transform:scale(1.12)}
+}
+@keyframes shake{
+ 25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}
+}
+@keyframes rise{
+ from{transform:translateY(0);opacity:0.9}
+ to{transform:translateY(-120vh);opacity:0}
+}
+@keyframes twinkle{
+ 50%{opacity:.3;transform:scale(1.4)}
+}
+</style>
+</head>
+<body>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+<div class="balloon b4">🎈</div>
+
+<div class="star" style="top:15%;left:15%">✨</div>
+<div class="star" style="top:20%;right:15%">⭐</div>
+
+<div class="card">
+<div class="gift">🎁</div>
+<div class="cake">🎂✨</div>
+<div class="title">刘畅<br>生日快乐</div>
+<p class="tip">点击礼物盒，开启祝福 💗</p>
+</div>
+
+<script>
+document.querySelector('.gift').onclick=function(){
+ this.innerHTML="🎉🎁💖";
+ document.querySelector('.tip').innerHTML="愿你每天开心 ✨";
+}
+</script>
+
+</body>
+</html>
